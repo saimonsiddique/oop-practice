@@ -1,4 +1,4 @@
-class Car
+public class Car
 {
   public Owner Owner { get; set; }
   public LicencePlate LicencePlate { get; set; }

@@ -1,4 +1,4 @@
-class LicencePlate
+public class LicencePlate
 {
   public string LicencePlateNumber { get; set; }
   public DateTime RegistrationDate { get; set; }
