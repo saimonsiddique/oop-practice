@@ -61,7 +61,8 @@ public class Library
     return books.FindAll(b =>
         b.Title.IndexOf(query, StringComparison.OrdinalIgnoreCase) >= 0 ||
         b.Author.IndexOf(query, StringComparison.OrdinalIgnoreCase) >= 0 ||
-        b.ISBN.IndexOf(query, StringComparison.OrdinalIgnoreCase) >= 0);
+        b.ISBN.IndexOf(query, StringComparison.OrdinalIgnoreCase) >= 0)
+        .ToList();
   }
 
   public void BorrowBook(string isbn, string memberId)
@@ -120,7 +121,7 @@ public class Library
     Member member = members.Find(m => m.MemberId == memberId);
     if (member != null)
     {
-      return member.BorrowRecords;
+      return member.BorrowRecords.ToList();
     }
     return new List<BorrowRecord>();
   }
